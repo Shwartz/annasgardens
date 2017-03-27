@@ -31,7 +31,7 @@ a, .logo span {
     margin: 11px 0;
 }
 .post {
-    @include border-radius(3px);
+    border-radius: 3px;
     background: #fff;
     border: 1px solid #999;
     clear: both;
@@ -40,10 +40,10 @@ a, .logo span {
     padding: 20px;
 }
 .col4 {
-	@include span-columns(4,4);
+	@include span(4 of 4);
 }
 .col8 {
-	@include span-columns(4,4);
+    @include span(4 of 4);
 }
 
 #page {
@@ -61,7 +61,7 @@ aside {
     a {
         background: none repeat scroll 0 0 #FFFFFF;
         border: 1px solid #CCCCCC;
-        border-radius: 3px 3px 3px 3px;
+        border-radius: 3px;
         font-size: 12px;
         padding: 2px 6px;
     }
@@ -70,15 +70,15 @@ aside {
 .pa-widget-top,
 .pa-widget-left,
 .pa-widget-right {
-    @include border-radius(3px);
+    border-radius: 3px;
     border: 1px solid #999;
     background: #fff;
     margin: 0 0 .8em;
     padding: .8em;
 }
 nav#headerMenu ul {
-    @include border-radius(3px);
-    @include box-sizing(border-box);
+    border-radius: 3px;
+    box-sizing: border-box;
     padding: 0 6px;
 }
 

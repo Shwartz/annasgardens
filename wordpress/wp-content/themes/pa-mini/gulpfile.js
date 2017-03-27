@@ -22,7 +22,6 @@ const PATHS = {
  * CSS TASKS
  */
 
-
 gulp.task('sass-dev', function () {
 	return gulp.src(PATHS.sass)
 		.pipe(sourcemaps.init())
