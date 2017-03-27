@@ -37,8 +37,7 @@ gulp.task('sass-dist', function () {
 		.pipe(sourcemaps.init())
 		.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
 		.pipe(sourcemaps.write('./'))
-		.pipe(replace(/@path@/ig, '../..'))
-		.pipe(gulp.dest('dist/css'));
+		.pipe(gulp.dest('./'));
 });
 
 
