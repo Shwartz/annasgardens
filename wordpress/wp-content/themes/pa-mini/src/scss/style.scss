@@ -9,35 +9,12 @@ Author URI: http://www.shvarcs.com
 /* -------------------------------------------------------------------------*/
 // Imports
 
-@import "compass/css3/";
-@import "reset";
+@import "normalize";
 @import "base";
 @import "mixins";
 @import "defaults";
 $experimental-support-for-svg: true;
 
-
-
-/* ------------  	SCREEN 320px	--------------*/
-@import "media/media-320";
-
-/* ------------  	SCREEN 480px	--------------*/
-@import "media/media-480";
-
-/* ------------  	SCREEN 768px	--------------*/
-@import "media/media-768";
-
-/* ------------  	SCREEN 1024px	--------------*/
-@import "media/media-1024";
-
-/* ------------  	SCREEN 1224px	--------------*/
-@import "media/media-1224";
-
-/* ------------  	SCREEN 1824px	--------------*/
-//@import "media/media-1824";
-
-/* lt-ie9 fixes */
-@import "lt-ie9";
 
 
 /* -------------------------------------------------------------------------*/

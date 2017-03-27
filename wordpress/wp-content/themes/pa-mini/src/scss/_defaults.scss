@@ -22,7 +22,7 @@ a, .logo span {
 */
 #container {
     @include container();
-    //@include susy-grid-background;
+    //@include scss-grid-background;
     min-width: 200px;
 }
 .left-col,

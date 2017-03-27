@@ -10,7 +10,7 @@
  */
 
 define('TEMPPATH', get_bloginfo('stylesheet_directory'));
-define('IMAGES', TEMPPATH . "/susy/img/");
+define('IMAGES', TEMPPATH . "/scss/img/");
 
 /* ----------------------------------------------------- */
 /* Required pages - admin menu for PA-Augustine */

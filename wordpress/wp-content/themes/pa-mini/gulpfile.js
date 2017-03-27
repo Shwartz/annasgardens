@@ -15,8 +15,7 @@ const reload = browserSync.reload;
 
 const PATHS = {
 	sass: ['src/scss/**/*.scss'],
-	es6: ['src/js/**/*.js'],
-	html: ['src/web/**/*.html']
+	es6: ['src/js/**/*.js']
 };
 
 /**
@@ -29,8 +28,7 @@ gulp.task('sass-dev', function () {
 		.pipe(sourcemaps.init())
 		.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
 		.pipe(sourcemaps.write('./'))
-		.pipe(replace(/@path@/ig, '../..'))
-		.pipe(gulp.dest('dev/css'))
+		.pipe(gulp.dest('./'))
 		.pipe(browserSync.stream());
 });
 
@@ -44,14 +42,6 @@ gulp.task('sass-dist', function () {
 		.pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('sass-prod', function () {
-	return gulp.src(PATHS.sass)
-		.pipe(sourcemaps.init())
-		.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-		.pipe(sourcemaps.write('./'))
-		.pipe(replace(/@path@/ig, '/img'))
-		.pipe(gulp.dest('../../app/webroot/css'));
-});
 
 /**
  * JAVASCRIPT TASKS

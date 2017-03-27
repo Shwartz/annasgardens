@@ -6,7 +6,7 @@
 ?>
 
 <?php
-$backgroundImage = get_option('pa_backgroundImage') ? get_option('pa_backgroundImage') : get_template_directory_uri() . "/susy/img/page-gradient.png";
+$backgroundImage = get_option('pa_backgroundImage') ? get_option('pa_backgroundImage') : get_template_directory_uri() . "/scss/img/page-gradient.png";
 $backgroundPosition = get_option('pa_backgroundPosition') ? get_option('pa_backgroundPosition') : 'center top';
 $backgroundRepeat = get_option('pa_backgroundRepeat') ? get_option('pa_backgroundRepeat') : 'repeat-x';
 $backgroundSize = get_option('pa_backgroundSize') ? get_option('pa_backgroundSize') : 'auto';
