@@ -1,0 +1,1 @@
+[02-Feb-2015 23:51:11 Europe/London] PHP Fatal error:  Call to undefined function get_header() in /home/shwartz/public_html/annasgardens.com/wp-content/themes/pa-mini/404.php on line 2

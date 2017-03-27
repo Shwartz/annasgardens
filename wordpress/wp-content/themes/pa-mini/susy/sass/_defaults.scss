@@ -1,0 +1,193 @@
+/* defaults.scss*/
+
+/* -------------------------------------------------------------------------*/
+/* Colors */
+
+$menuColors: #fff;
+$menuColorsBg: rgba(45, 127, 26, 0.8);
+$contentBg: rgba(255,255,0,0.5);
+
+/* -------------------------------------------------------------------------*/
+/* Animations */
+a, .logo span {	
+	@include transition-duration(500ms);
+	@include transition-timing("linear");
+}
+
+/* -------------------------------------------------------------------------*/
+/** Layout
+* Col# is based on 12/12 columns, means .col4 is 4/12.
+* Depends on Media Queries there could be override as 768 is based on 7 col.
+* That means, each Media Query adjust 12/12 to appropriate style aka 7/7 or 4/4 etc
+*/
+#container {
+    @include container();
+    //@include susy-grid-background;
+    min-width: 200px;
+}
+.left-col,
+.right-col,
+.full-col {
+    margin: 11px 0;
+}
+.post {
+    @include border-radius(3px);
+    background: #fff;
+    border: 1px solid #999;
+    clear: both;
+    margin-bottom: 10px;
+    overflow: hidden;
+    padding: 20px;
+}
+.col4 {
+	@include span-columns(4,4);
+}
+.col8 {
+	@include span-columns(4,4);
+}
+
+#page {
+    padding-bottom: 50px;
+}
+article {
+
+}
+aside {
+
+}
+.navi {
+    clear: both;
+    width: 100%;
+    a {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #CCCCCC;
+        border-radius: 3px 3px 3px 3px;
+        font-size: 12px;
+        padding: 2px 6px;
+    }
+}
+
+.pa-widget-top,
+.pa-widget-left,
+.pa-widget-right {
+    @include border-radius(3px);
+    border: 1px solid #999;
+    background: #fff;
+    margin: 0 0 .8em;
+    padding: .8em;
+}
+nav#headerMenu ul {
+    @include border-radius(3px);
+    @include box-sizing(border-box);
+    padding: 0 6px;
+}
+
+.widget {
+    box-shadow: 1px 1px 2px #777777
+}
+footer .widget {
+    box-shadow: none;
+}
+#logoContainer {
+    display: block;
+    padding: 20px 0 20px 10px;
+    a {
+        color: #ffffff;
+        font-size: 36px;
+        text-decoration: none;
+        text-shadow: 1px 1px 1px #000000;
+        &:hover {
+            color: #47633a;
+        }
+    }
+}
+.archiveTitle {
+    margin-bottom: 20px;
+}
+.archivePosts {
+    clear: both;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.searchbar {
+    background: #ffffff;
+    border: 1px solid #ccc;
+    display: inline-block;
+    width: 100%;
+    input.searchInput {
+        border: none;
+        display: block;
+        float: left;
+        font-size: 12px;
+        height: 24px;
+        width: 80%;
+    }
+    button.searchSubmit {
+        border: none;
+        display: block;
+        float: right;
+        height: 26px;
+        width: 18%;
+        span {
+            color: #777777;
+        }
+    }
+
+}
+.fontRoughScript {
+    font-family: 'Rouge Script', cursive;
+}
+.post img {
+    background: #FFFFFF;
+    border: 1px solid #999999;
+    box-shadow: 0 0 3px #AAAAAA;
+    padding: 6px;
+}
+#content {
+
+    li {
+        font-size: 0.9em;
+        list-style-type: disc;
+        margin-bottom: 4px;
+        margin-left: 25px;
+    }
+
+    .image-gallery li {
+        list-style-type: none;
+        margin-bottom: 0px;
+        margin-left: 0;
+    }
+}
+
+
+
+/* -------------------------------------------------------------------------*/
+/* Helpers */
+header, footer {clear: both;}
+footer {
+    background: #304050;
+    border-top: 1px solid #333333;
+    padding: 40px 20px 100px;
+    p {
+        color: #CED5DB;
+    }
+}
+.widget {
+    li {
+        margin-bottom: 8px;
+        span.post-date {
+            display: block;
+            font-size: 0.8em;
+            font-style: italic;
+            margin-bottom: 14px;
+            text-align: right;
+        }
+    }
+}
+.signature {
+    color: white;
+    &:hover {
+        color: red;
+    }
+}
+

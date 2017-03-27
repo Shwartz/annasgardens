@@ -1,0 +1,108 @@
+    /** ---------------------------------
+    *      => MEDIA QUERY FROM 1024
+    *   ---------------------------------
+    */
+
+@include at-breakpoint(1024px) {
+    @include media-queries-debug-info(#ff5749, "Screen 1024px | 10 columns");
+	$total-columns  : 10;
+	$column-width   : 90px;
+	$gutter-width   : 15px;
+	$grid-padding   : $gutter-width;
+    #container {
+	  @include container();
+	  //@include susy-grid-background;
+	}
+
+	p {
+		font-size: 1em;
+		line-height: 1.4em;
+	}
+	.logo {
+		background: rgba(255,180,5,0.8);
+		span {
+			background: blue;
+			box-shadow: 2px 2px 2px #444444;
+		    color: white;
+		    left: 0;
+		    padding: 20px 17px;
+		    position: absolute;
+		    top: 0;
+		    width: auto;
+		    @include rotate(32deg);
+		}
+	}
+
+    /** ---------------------------------
+    *       =NAVIGATION > 1024
+    *   ---------------------------------
+    */
+
+
+
+    /** ---------------------------------
+    *       =LAYOUT  > 1024
+    *   ---------------------------------
+    */
+    .left-col, .right-col, .full-col {
+        margin-top: 1.44928%;
+    }
+
+	.left-col {
+		@include span-columns(6,10);
+        .firstPost .postImage {
+            @include span-columns(3,6);
+        }
+        .postImage {
+            @include span-columns(3,6);
+            img {
+                border: 1px solid #304050;
+                @include box-sizing(border-box);
+            }
+        }
+        .firstPost {
+            @include span-columns(6, 6);
+        }
+        .grid-1-2 {
+            @include span-columns(3,6);
+            h2 {
+                font-size: 1.4em;
+            }
+            .postImage {
+                @include span-columns(3,3);
+            }
+        }
+        .grid-1-2.last {
+            @include span-columns(3 omega,6);
+        }
+
+	}
+	.right-col {
+		@include span-columns(4 omega, 10);
+        .grid-1-1 {
+            @include span-columns(4, 4);
+        }
+        .grid-1-2 {
+            @include span-columns(2, 4);
+        }
+        .grid-1-2.last {
+            @include span-columns(2 omega, 4);
+        }
+	}
+    .full-col {
+        @include span-columns(10 omega, 10);
+    }
+
+    /** ---------------------------------
+    *       =WIDGETS  > 1024
+    *   ---------------------------------
+    */
+    .pa-widget-top,
+    .pa-widget-left,
+    .pa-widget-right {
+
+    }
+
+}
+
+
