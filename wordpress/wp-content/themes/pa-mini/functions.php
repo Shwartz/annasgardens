@@ -67,26 +67,8 @@ add_filter( 'excerpt_more', 'new_excerpt_more' );
 /* ----------------------------------------------------- */
 function pa_mini_scripts()
 {
-    /*  Using Google's service for jQuery. Some plugins use jQuery and push it loading first.
-        this way I can push Modernizr first. If not, then page going to flicker each time.
-     */
-    wp_deregister_script( 'jquery' );
-
-    wp_register_script('modernizr', get_template_directory_uri() . '/js/vendor/modernizr-2.6.2.min.js', 'false',
-        '2.6.2');
-    wp_register_script('jquery', get_template_directory_uri() . '/js/vendor/jquery-1.10.2.min.js',
-        array('modernizr'),
-        '1.10.2');
-    wp_register_script('superFish', get_template_directory_uri() . '/js/vendor/superfish.js',
-        array('modernizr', 'jquery'), '20120425');
-    wp_register_script('jRespond', get_template_directory_uri() . '/js/vendor/jRespond.js',
-        array('modernizr', 'jquery'), '20120425');
-    wp_register_script('jPanel', get_template_directory_uri() . '/js/vendor/query.jpanelmenu.min.js', array('modernizr', 'jquery'), '20120425');
-    wp_register_script('main', get_template_directory_uri() . '/js/app.js', array('modernizr', 'jquery'), '20130911');
-
-    //wp_enqueue_script(array('modernizr', 'jquery'));
-    wp_enqueue_script(array('modernizr', 'jquery', 'superFish', 'jRespond', 'jPanel', 'main'), false);
-
+    wp_register_script('bundle', get_template_directory_uri() . '/dev/js/bundle.js', '20170327');
+    wp_enqueue_script(array('bundle'), false);
 }
 
 add_action('wp_enqueue_scripts', 'pa_mini_scripts');

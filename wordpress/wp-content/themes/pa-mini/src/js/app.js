@@ -11,7 +11,7 @@
  * 	33kb
  * */
 
-import main from './modules/main';
+import {init} from './modules/main';
 
 function ready(fn) {
     // is content loaded
@@ -24,5 +24,5 @@ function ready(fn) {
 
 ready(function () {
     document.body.classList.remove('no-js');
-    main.init();
+    init();
 });

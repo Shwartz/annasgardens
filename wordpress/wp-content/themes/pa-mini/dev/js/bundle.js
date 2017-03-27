@@ -59,10 +59,6 @@
 	
 	var _main = __webpack_require__(1);
 	
-	var _main2 = _interopRequireDefault(_main);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
 	function ready(fn) {
 	    // is content loaded
 	    if (document.readyState != 'loading') {
@@ -74,7 +70,7 @@
 	
 	ready(function () {
 	    document.body.classList.remove('no-js');
-	    _main2.default.init();
+	    (0, _main.init)();
 	});
 
 /***/ },
@@ -86,7 +82,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.default = init;
+	exports.init = init;
 	function init() {
 	    console.log('ta-daa');
 	}

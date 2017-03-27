@@ -1,5 +1,5 @@
 "use strict";
 
-export default function init() {
+export function init() {
     console.log('ta-daa');
 }
