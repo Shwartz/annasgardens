@@ -1,0 +1,21 @@
+.top {
+    &-logo {
+        a {
+            width: 242px;
+            height: 88px;
+            display: inline-block;
+            background: url('images/logo-annasgardens.png') no-repeat 50%;
+            background-size: contain;
+            overflow: hidden;
+            text-indent: -999em;
+        }
+    }
+
+    &-search {
+
+    }
+
+    &-menu {
+
+    }
+}

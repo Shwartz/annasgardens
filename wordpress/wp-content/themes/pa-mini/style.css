@@ -637,16 +637,9 @@ a, .logo span {
 * That means, each Media Query adjust 12/12 to appropriate style aka 7/7 or 4/4 etc
 */
 #container {
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  min-width: 200px;
-}
-
-#container:after {
-  content: " ";
-  display: block;
-  clear: both;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: pink;
 }
 
 .left-col,
@@ -706,34 +699,12 @@ a, .logo span {
   padding: .8em;
 }
 
-nav#headerMenu ul {
-  border-radius: 3px;
-  box-sizing: border-box;
-  padding: 0 6px;
-}
-
 .widget {
   box-shadow: 1px 1px 2px #777777;
 }
 
 footer .widget {
   box-shadow: none;
-}
-
-#logoContainer {
-  display: block;
-  padding: 20px 0 20px 10px;
-}
-
-#logoContainer a {
-  color: #ffffff;
-  font-size: 36px;
-  text-decoration: none;
-  text-shadow: 1px 1px 1px #000000;
-}
-
-#logoContainer a:hover {
-  color: #47633a;
 }
 
 .archiveTitle {
@@ -744,38 +715,6 @@ footer .widget {
   clear: both;
   margin-bottom: 20px;
   overflow: hidden;
-}
-
-.searchbar {
-  background: #ffffff;
-  border: 1px solid #ccc;
-  display: inline-block;
-  width: 100%;
-}
-
-.searchbar input.searchInput {
-  border: none;
-  display: block;
-  float: left;
-  font-size: 12px;
-  height: 24px;
-  width: 80%;
-}
-
-.searchbar button.searchSubmit {
-  border: none;
-  display: block;
-  float: right;
-  height: 26px;
-  width: 18%;
-}
-
-.searchbar button.searchSubmit span {
-  color: #777777;
-}
-
-.fontRoughScript {
-  font-family: 'Rouge Script', cursive;
 }
 
 .post img {
@@ -796,6 +735,20 @@ footer .widget {
   list-style-type: none;
   margin-bottom: 0px;
   margin-left: 0;
+}
+
+.left-col {
+  width: 66.10169%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+.right-col {
+  width: 32.20339%;
+  float: left;
+  margin-right: 1.69492%;
+  float: right;
+  margin-right: 0;
 }
 
 /* -------------------------------------------------------------------------*/
@@ -832,6 +785,16 @@ footer p {
 
 .signature:hover {
   color: red;
+}
+
+.top-logo a {
+  width: 242px;
+  height: 88px;
+  display: inline-block;
+  background: url("images/logo-annasgardens.png") no-repeat 50%;
+  background-size: contain;
+  overflow: hidden;
+  text-indent: -999em;
 }
 
 /* -------------------------------------------------------------------------*/

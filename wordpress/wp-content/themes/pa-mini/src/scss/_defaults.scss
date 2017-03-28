@@ -21,9 +21,9 @@ a, .logo span {
 * That means, each Media Query adjust 12/12 to appropriate style aka 7/7 or 4/4 etc
 */
 #container {
-    @include container();
-    //@include scss-grid-background;
-    min-width: 200px;
+    max-width: 1440px;
+    margin: 0 auto;
+    background: pink;
 }
 .left-col,
 .right-col,
@@ -45,6 +45,7 @@ a, .logo span {
 .col8 {
     @include span(4 of 4);
 }
+
 
 #page {
     padding-bottom: 50px;
@@ -76,11 +77,6 @@ aside {
     margin: 0 0 .8em;
     padding: .8em;
 }
-nav#headerMenu ul {
-    border-radius: 3px;
-    box-sizing: border-box;
-    padding: 0 6px;
-}
 
 .widget {
     box-shadow: 1px 1px 2px #777777
@@ -88,19 +84,7 @@ nav#headerMenu ul {
 footer .widget {
     box-shadow: none;
 }
-#logoContainer {
-    display: block;
-    padding: 20px 0 20px 10px;
-    a {
-        color: #ffffff;
-        font-size: 36px;
-        text-decoration: none;
-        text-shadow: 1px 1px 1px #000000;
-        &:hover {
-            color: #47633a;
-        }
-    }
-}
+
 .archiveTitle {
     margin-bottom: 20px;
 }
@@ -109,34 +93,7 @@ footer .widget {
     margin-bottom: 20px;
     overflow: hidden;
 }
-.searchbar {
-    background: #ffffff;
-    border: 1px solid #ccc;
-    display: inline-block;
-    width: 100%;
-    input.searchInput {
-        border: none;
-        display: block;
-        float: left;
-        font-size: 12px;
-        height: 24px;
-        width: 80%;
-    }
-    button.searchSubmit {
-        border: none;
-        display: block;
-        float: right;
-        height: 26px;
-        width: 18%;
-        span {
-            color: #777777;
-        }
-    }
 
-}
-.fontRoughScript {
-    font-family: 'Rouge Script', cursive;
-}
 .post img {
     background: #FFFFFF;
     border: 1px solid #999999;
@@ -157,6 +114,17 @@ footer .widget {
         margin-bottom: 0px;
         margin-left: 0;
     }
+}
+
+
+
+.left-col {
+    @include span(8 of 12);
+}
+
+.right-col {
+    @include span(4 of 12);
+    @include last;
 }
 
 

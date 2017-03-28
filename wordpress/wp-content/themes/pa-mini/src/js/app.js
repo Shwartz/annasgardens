@@ -1,15 +1,5 @@
 "use strict";
-
 /*\_(ツ)_*/
-
-/* Story starts here */
-/*
- Before appConfig size
- * bundle - 67kb
- * 	67kb
- * min - 29kb
- * 	33kb
- * */
 
 import {init} from './modules/main';
 

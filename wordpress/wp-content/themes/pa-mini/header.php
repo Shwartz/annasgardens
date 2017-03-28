@@ -17,24 +17,21 @@
     <?php wp_head(); ?>
 </head>
 
-<body>
-<div id="mobSelectorWrap">
-    <a href="#" id="mobileMenuSelector" aria-hidden="true" data-icon="&#xe000;">&nbsp;</a>
-</div>
+<body class="no-js">
 <?php // <div id="mediaDebug"></div> ?>
 <div id="page">
     <div id="container" class="group">
-        <header class="group">
-            <span id="logoContainer">
-                <a class="fontRoughScript" href="<?php bloginfo('url') ?>">Anna's Gardens</a>
-                <?php /*
-                    $logo = get_option( 'pa_logo' ) ? get_option( 'pa_logo' ) : IMAGES.'default-logo.png'; ?>
-                <a href="<?php bloginfo('url') ?>">
-                    <img src="<?php print $logo; ?>" alt="<?php bloginfo('name'); ?>" />
-                </a>
-                    */ ?>
+        <header class="top group">
+
+            <span class="top-logo">
+                <a href="<?php bloginfo('url') ?>">Anna's Gardens - Organic Garden Maintenance</a>
             </span>
-            <nav id="headerMenu">
+
+            <div class="top-search">
+                <?php get_search_form( true ); ?>
+            </div>
+
+            <nav class="top-menu">
                 <?php
                     $defaults = array(
                         'theme_location' => 'pa_primary_menu'
@@ -42,5 +39,6 @@
                     wp_nav_menu( $defaults );
                 ?>
             </nav>
+
         </header>
         <div id="content" class="group">

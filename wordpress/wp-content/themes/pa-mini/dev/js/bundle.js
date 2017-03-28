@@ -45,17 +45,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	
 	/*\_(ツ)_*/
-	
-	/* Story starts here */
-	/*
-	 Before appConfig size
-	 * bundle - 67kb
-	 * 	67kb
-	 * min - 29kb
-	 * 	33kb
-	 * */
 	
 	var _main = __webpack_require__(1);
 	
