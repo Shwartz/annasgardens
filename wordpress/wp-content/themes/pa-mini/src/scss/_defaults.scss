@@ -21,9 +21,8 @@ a, .logo span {
 * That means, each Media Query adjust 12/12 to appropriate style aka 7/7 or 4/4 etc
 */
 #container {
-    max-width: 1440px;
-    margin: 0 auto;
     background: pink;
+    overflow: hidden;
 }
 .left-col,
 .right-col,

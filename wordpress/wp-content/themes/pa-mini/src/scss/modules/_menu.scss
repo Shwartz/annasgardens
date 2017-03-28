@@ -1,0 +1,32 @@
+nav.main-menu {
+    box-shadow: 0 5px 2px black;
+    overflow: hidden;
+
+    div {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 50px;
+    }
+
+    a {
+        display: block;
+        padding: 10px 16px 12px;
+        font-family: 'Fira Sans', sans-serif;
+        font-size: 18px;
+        text-decoration: none;
+
+        &:hover {
+            background: $green
+        }
+    }
+
+    ul > li {
+        float: left;
+    }
+
+    /* submenu hiding */
+    ul > li > ul {
+        display: none;
+    }
+}

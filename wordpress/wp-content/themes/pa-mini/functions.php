@@ -50,8 +50,10 @@ function pa_mini_styles()
 {
 
     wp_register_style('style', get_template_directory_uri() . '/style.css', array(), uniqid(), 'all');
-    wp_register_style('userStyle', get_site_url() . '/?pa_theme_custom_css=css', uniqid(), 'all');
-    wp_enqueue_style(array('style', 'userStyle'));
+    /*  TURNING OFF USER CSS SINCE THIS WILL BE BESPOKE VERSION */
+    /*wp_register_style('userStyle', get_site_url() . '/?pa_theme_custom_css=css', uniqid(), 'all');
+    wp_enqueue_style(array('style', 'userStyle'));*/
+    wp_enqueue_style('style', 'style');
 
 }
 
