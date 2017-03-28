@@ -11,13 +11,14 @@ nav.main-menu {
 
     a {
         display: block;
-        padding: 10px 16px 12px;
+        padding: 21px 16px 21px;
         font-family: 'Fira Sans', sans-serif;
         font-size: 18px;
         text-decoration: none;
 
         &:hover {
-            background: $green
+            background: $green;
+            color: $white;
         }
     }
 

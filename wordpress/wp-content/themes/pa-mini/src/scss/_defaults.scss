@@ -10,7 +10,7 @@ $contentBg: rgba(255,255,0,0.5);
 /* -------------------------------------------------------------------------*/
 /* Animations */
 a, .logo span {	
-	@include transition-duration(500ms);
+	@include transition-duration(0.3s);
 	@include transition-timing("linear");
 }
 
