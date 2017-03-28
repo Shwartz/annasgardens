@@ -127,7 +127,7 @@ h1,h2{
     margin-bottom: 20px;
 }
 h1 {
-    font-family: 'Rouge Script', cursive;
+
 }
 
 h1 a,
@@ -145,9 +145,6 @@ h3 {font-size: 1.1em;}
     margin-top: 30px;
 }
 
-.naviBreadcrumb a {
-    color: red;
-}
 a {
     color: #425564;
 }
@@ -159,20 +156,6 @@ div, p, span {
 }
 
 
-#mediaIcons {
-    overflow: hidden;
-    width: 100%;
-    a {
-        color: #FFFFFF;
-        float: right;
-        font-size: 20px;
-        margin: 2px;
-        text-decoration: none;
-        &:hover {
-            color: red;
-        }
-    }
-}
 textarea, input {
     width: 98%;
 }

@@ -239,6 +239,9 @@ function mediaIcons()
 }
 
 
+current_theme_supports( 'html5' );
+
+
 
 
 
