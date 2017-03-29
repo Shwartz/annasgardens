@@ -4,13 +4,15 @@
     nav {
         top: $mobMenuHeight;
         position: absolute;
-        background: wheat;
+        background: $white;
         width: 300px;
         z-index: 10;
         bottom: 0;
         right: 0;
         text-align: left;
         overflow: auto;
+        transform: translate3d(300px, 0, 0);
+        transition: transform 0.3s;
         -webkit-overflow-scrolling: touch;
     }
 
@@ -23,17 +25,25 @@
             height: 54px;
             top: 0;
             right: 0;
-            background: #4b53ff;
-            color: green;
+            background: $grey;
+            color: $white;
             cursor: pointer;
 
             &:after {
                 line-height: 18px;
-                content: "+";
+                content: "-";
                 font-size: 32px;
                 position: absolute;
+                top: calc(50% - 10px);
+                left: calc(50% - 5px);
+            }
+        }
+
+        &._hide > div._btn-cat {
+            &:after {
+                content: "+";
                 top: calc(50% - 8px);
-                left: calc(50% - 8px);;
+                left: calc(50% - 8px);
             }
         }
     }
@@ -41,12 +51,25 @@
     ul a {
         display: block;
         padding: 16px 8px;
-        border-bottom: 1px solid red;
+        border-bottom: 1px solid $lightGrey;
+        border-left: 4px solid $white;
         text-decoration: none;
+
+        &:hover {
+            border-left: 4px solid $green;
+        }
     }
 
-    ul > li > a {
+    li.current_page_parent > a {
+        border-left: 4px solid $green;
+    }
 
+    li.current-menu-item a {
+        border-left: 4px solid $green;
+    }
+
+    ul > li > ul  a {
+        padding-left: 32px;
     }
 
     ul > li._hide {
@@ -54,10 +77,15 @@
             display: none;
         }
     }
+
+
 }
 
 body._show-mob-menu {
     overflow: hidden;
+    .mob-menu nav {
+        transform: translate3d(0, 0, 0);
+    }
 }
 
 .mobile-menu-hamburger {
@@ -68,9 +96,24 @@ body._show-mob-menu {
     right: 0;
     z-index: 1;
     text-align: right;
-    background: yellow;
+    background: $lightGrey;
 
     @include susy-media($tabletLandscape) {
         display: none;
+    }
+
+    button {
+        padding: 0;
+        border: none;
+        background: url(images/icn-hamburger.svg) no-repeat 50%;
+        overflow: hidden;
+        text-indent: -999em;
+        width: 48px;
+        height: 48px;
+        line-height: 0;
+
+        ._show-mob-menu & {
+            background: url(images/icn-cross.svg) no-repeat 50%;
+        }
     }
 }

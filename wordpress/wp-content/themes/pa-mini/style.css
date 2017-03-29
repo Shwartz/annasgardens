@@ -995,13 +995,15 @@ nav.main-menu ul > li > ul.sub-menu {
 .mob-menu nav {
   top: 48px;
   position: absolute;
-  background: wheat;
+  background: #fff;
   width: 300px;
   z-index: 10;
   bottom: 0;
   right: 0;
   text-align: left;
   overflow: auto;
+  transform: translate3d(300px, 0, 0);
+  transition: transform 0.3s;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -1015,16 +1017,22 @@ nav.main-menu ul > li > ul.sub-menu {
   height: 54px;
   top: 0;
   right: 0;
-  background: #4b53ff;
-  color: green;
+  background: #BDBDBD;
+  color: #fff;
   cursor: pointer;
 }
 
 .mob-menu ul li > div._btn-cat:after {
   line-height: 18px;
-  content: "+";
+  content: "-";
   font-size: 32px;
   position: absolute;
+  top: calc(50% - 10px);
+  left: calc(50% - 5px);
+}
+
+.mob-menu ul li._hide > div._btn-cat:after {
+  content: "+";
   top: calc(50% - 8px);
   left: calc(50% - 8px);
 }
@@ -1032,8 +1040,25 @@ nav.main-menu ul > li > ul.sub-menu {
 .mob-menu ul a {
   display: block;
   padding: 16px 8px;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid #f2f2f2;
+  border-left: 4px solid #fff;
   text-decoration: none;
+}
+
+.mob-menu ul a:hover {
+  border-left: 4px solid #6B9D48;
+}
+
+.mob-menu li.current_page_parent > a {
+  border-left: 4px solid #6B9D48;
+}
+
+.mob-menu li.current-menu-item a {
+  border-left: 4px solid #6B9D48;
+}
+
+.mob-menu ul > li > ul a {
+  padding-left: 32px;
 }
 
 .mob-menu ul > li._hide ul {
@@ -1044,6 +1069,10 @@ body._show-mob-menu {
   overflow: hidden;
 }
 
+body._show-mob-menu .mob-menu nav {
+  transform: translate3d(0, 0, 0);
+}
+
 .mobile-menu-hamburger {
   position: absolute;
   top: 0;
@@ -1052,13 +1081,28 @@ body._show-mob-menu {
   right: 0;
   z-index: 1;
   text-align: right;
-  background: yellow;
+  background: #f2f2f2;
 }
 
 @media (min-width: 768px) {
   .mobile-menu-hamburger {
     display: none;
   }
+}
+
+.mobile-menu-hamburger button {
+  padding: 0;
+  border: none;
+  background: url(images/icn-hamburger.svg) no-repeat 50%;
+  overflow: hidden;
+  text-indent: -999em;
+  width: 48px;
+  height: 48px;
+  line-height: 0;
+}
+
+._show-mob-menu .mobile-menu-hamburger button {
+  background: url(images/icn-cross.svg) no-repeat 50%;
 }
 
 /* -------------------------------------------------------------------------*/
