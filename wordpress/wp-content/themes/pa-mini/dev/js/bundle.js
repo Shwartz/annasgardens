@@ -185,17 +185,39 @@
 	    function Menu(root) {
 	        _classCallCheck(this, Menu);
 	
+	        // root -> current menu element
 	        this.root = root;
-	        this.page = document.getElementById('page');
+	        this.elPage = document.getElementById('page');
+	        // creating wrapper element for mob menu
 	        this.elMobWrap = _utils2.default.make('div');
 	        (0, _helpers.addClass)(this.elMobWrap, 'mob-menu');
+	        //addClass(this.elMobWrap, face.str_hide);
 	
-	        console.log('root: ', this.root);
+	        // overlay
+	        this.elOverlay = _utils2.default.make('div');
+	        (0, _helpers.addClass)(this.elOverlay, '_overlay');
+	
+	        // create close button
+	        this.elBtnWrapper = _utils2.default.make('div');
+	        this.elBtn = _utils2.default.make('button');
+	        this.elBtn.innerHTML = 'Close';
+	        (0, _helpers.addClass)(this.elBtnWrapper, '_close');
+	        this.elBtnWrapper.appendChild(this.elBtn);
+	
+	        // clone existing menu
+	        this.elMobMenu = root.cloneNode(true);
+	        (0, _helpers.removeClass)(this.elMobMenu, 'main-menu');
+	
+	        this.addMobMenuToDom();
 	    }
 	
 	    _createClass(Menu, [{
 	        key: 'addMobMenuToDom',
-	        value: function addMobMenuToDom() {}
+	        value: function addMobMenuToDom() {
+	            this.elPage.insertBefore(this.elMobWrap, this.elPage.firstChild);
+	            this.elMobWrap.appendChild(this.elBtn);
+	            this.elMobWrap.appendChild(this.elMobMenu);
+	        }
 	    }, {
 	        key: 'toggleBtn',
 	        value: function toggleBtn() {}

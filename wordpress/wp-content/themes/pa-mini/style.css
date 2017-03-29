@@ -972,6 +972,34 @@ nav.main-menu ul > li > ul.sub-menu {
   }
 }
 
+.mob-menu {
+  height: 30px;
+  background: yellow;
+  text-align: right;
+}
+
+.mob-menu nav {
+  top: 30px;
+  position: absolute;
+  background: wheat;
+  width: 300px;
+  z-index: 10;
+  bottom: 0;
+  right: 0;
+  text-align: left;
+}
+
+.mob-menu ul a {
+  display: block;
+  padding: 16px 8px;
+  border-bottom: 1px solid red;
+  text-decoration: none;
+}
+
+.mob-menu ul > li > ul {
+  display: none;
+}
+
 /* -------------------------------------------------------------------------*/
 /* Debug - which template? */
 #whichTemplate {

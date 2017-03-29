@@ -1,0 +1,31 @@
+.mob-menu {
+    height: 30px;
+    background: yellow;
+    text-align: right;
+
+    nav {
+        top: 30px;
+        position: absolute;
+        background: wheat;
+        width: 300px;
+        z-index: 10;
+        bottom: 0;
+        right: 0;
+        text-align: left;
+    }
+
+    ul a {
+        display: block;
+        padding: 16px 8px;
+        border-bottom: 1px solid red;
+        text-decoration: none;
+    }
+
+    ul > li > a {
+
+    }
+
+    ul > li > ul {
+        display: none;
+    }
+}

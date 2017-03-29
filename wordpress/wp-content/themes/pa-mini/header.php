@@ -16,9 +16,6 @@
 <body class="no-js">
 <?php // <div id="mediaDebug"></div> ?>
 <div id="page">
-    <div class="mob-menu">
-        this is mob menu
-    </div>
     <div id="container" class="group">
         <header class="top group">
 
