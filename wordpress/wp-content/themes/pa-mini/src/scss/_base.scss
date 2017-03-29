@@ -114,21 +114,12 @@ div.byline {
         color: #788A91;
     }
 }
-.widget p {
-    font-size: 0.9em;
-}
+
 
     /** ---------------------------------
     *       TYPOGRAPHY
     *   ---------------------------------
     */
-h1,h2{
-    color: #434696;
-    margin-bottom: 20px;
-}
-h1 {
-
-}
 
 h1 a,
 h2 a {
@@ -138,22 +129,23 @@ h2 a {
 .indexTemplate h2 {
     margin-bottom: 20px;
 }
-h1 {font-size: 2.4em; font-weight: normal; font-style: italic;}
+h1 {font-size: 24px; font-weight: bold; color: $green;}
 h2 {font-size: 2em;}
-h3 {font-size: 1.1em;}
-.post h3 {
-    margin-top: 30px;
+h3 {font-size: 16px; font-weight: bold;}
+
+p {
+    margin: 16px 0 0;
+    font-size: 14px;
 }
 
 a {
-    color: #425564;
+    color: $green;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
 }
-a:hover {
-    color: #434696;
-}
-div, p, span {
-    color: #1F3145;
-}
+
 
 
 textarea, input {

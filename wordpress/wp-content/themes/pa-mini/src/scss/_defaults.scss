@@ -23,27 +23,6 @@ a {
     overflow: hidden;
     min-width: 320px;
 }
-.left-col,
-.right-col,
-.full-col {
-    margin: 11px 0;
-}
-.post {
-    border-radius: 3px;
-    background: #fff;
-    border: 1px solid #999;
-    clear: both;
-    margin-bottom: 10px;
-    overflow: hidden;
-    padding: 20px;
-}
-.col4 {
-	@include span(4 of 4);
-}
-.col8 {
-    @include span(4 of 4);
-}
-
 
 #page {
     padding-bottom: 50px;
@@ -54,12 +33,6 @@ a {
     }
 }
 
-article {
-
-}
-aside {
-
-}
 .navi {
     clear: both;
     width: 100%;
@@ -76,18 +49,7 @@ aside {
 .pa-widget-top,
 .pa-widget-left,
 .pa-widget-right {
-    border-radius: 3px;
-    border: 1px solid #999;
-    background: #fff;
-    margin: 0 0 .8em;
-    padding: .8em;
-}
 
-.widget {
-    box-shadow: 1px 1px 2px #777777
-}
-footer .widget {
-    box-shadow: none;
 }
 
 .archiveTitle {
@@ -105,46 +67,11 @@ footer .widget {
     box-shadow: 0 0 3px #AAAAAA;
     padding: 6px;
 }
-#content {
-
-    li {
-        font-size: 0.9em;
-        list-style-type: disc;
-        margin-bottom: 4px;
-        margin-left: 25px;
-    }
-
-    .image-gallery li {
-        list-style-type: none;
-        margin-bottom: 0px;
-        margin-left: 0;
-    }
-}
-
-
-
-.left-col {
-    @include span(8 of 12);
-}
-
-.right-col {
-    @include span(4 of 12);
-    @include last;
-}
-
-
 
 /* -------------------------------------------------------------------------*/
 /* Helpers */
 header, footer {clear: both;}
-footer {
-    background: #304050;
-    border-top: 1px solid #333333;
-    padding: 40px 20px 100px;
-    p {
-        color: #CED5DB;
-    }
-}
+
 .widget {
     li {
         margin-bottom: 8px;
@@ -157,21 +84,6 @@ footer {
         }
     }
 }
-.signature {
-    color: white;
-    &:hover {
-        color: red;
-    }
-}
 
-._overlay {
-    ._show-mob-menu & {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: rgba(0,0,0,0.5);
-    }
-}
+
 

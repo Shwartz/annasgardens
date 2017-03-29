@@ -3,11 +3,10 @@
     max-width: 1440px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 10px;
+    padding: 24px 10px 0;
 
     &-logo {
         position: relative;
-        margin-top: 8px;
         text-align: center;
 
         a {
@@ -79,9 +78,8 @@
         }
     }
 
-
-
     @include susy-media($smallTablet) {
+
         &-logo {
             a {
                 width: 210px;
@@ -97,8 +95,7 @@
     }
 
     @include susy-media($tablet) {
-        height: 140px;
-        padding: 0 50px;
+        padding: 24px 50px 0;
 
         &-search {
             button {
@@ -108,15 +105,23 @@
     }
 
     @include susy-media($desktop) {
+        height: 140px;
+        padding-top: 32px;
+
+        &-logo {
+            a {
+                width: 242px;
+                height: 88px;
+            }
+        }
 
         &-contacts {
             margin-top: 20px;
         }
 
-
         &-search {
             position: absolute;
-            top: 0;
+            top: 32px;
             right: 354px;
             width: auto;
 

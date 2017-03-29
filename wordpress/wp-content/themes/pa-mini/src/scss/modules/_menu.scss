@@ -16,6 +16,7 @@ nav.main-menu {
         font-family: 'Fira Sans', sans-serif;
         font-size: 18px;
         text-decoration: none;
+        margin-bottom: 1px;
 
         &:hover {
             background: $green;
@@ -33,6 +34,10 @@ nav.main-menu {
     ul > li {
         float: left;
 
+        &:first-child > a {
+            padding-left: 0;
+        }
+
         &:hover {
             > ul.sub-menu {
                 display: block;
@@ -43,6 +48,7 @@ nav.main-menu {
                 a {
                     padding: 16px 8px 16px 8px;
                     border-bottom: none;
+                    margin-bottom: 0;
 
                     &:hover {
                         padding-left: 6px;

@@ -1,0 +1,77 @@
+#content {
+    margin: 0 auto;
+    padding: 0 50px;
+    max-width: 1440px;
+    overflow: hidden;
+
+    li {
+        font-size: 0.9em;
+        list-style-type: disc;
+        margin-bottom: 4px;
+        margin-left: 25px;
+    }
+
+    .image-gallery li {
+        list-style-type: none;
+        margin-bottom: 0;
+        margin-left: 0;
+    }
+}
+
+.left-col {
+    @include span(12 of 12);
+}
+
+.right-col {
+    @include span(12 of 12);
+}
+
+@include susy-media($laptop) {
+    .left-col {
+        @include span(7 of 12);
+    }
+
+    .right-col {
+        @include span(5 of 12);
+        @include last;
+    }
+}
+
+.widget {
+    margin-top: 48px;
+    padding: 32px;
+    background: $lightGrey;
+
+    h3 {
+        margin-top: 16px;
+    }
+
+    a {
+        font-style: italic;
+    }
+}
+
+footer {
+    background: $lightGrey;
+
+    ._footer-inner {
+        margin: 0 auto;
+        padding: 50px;
+        max-width: 1440px;
+    }
+
+    p {
+        color: $text;
+    }
+}
+
+._overlay {
+    ._show-mob-menu & {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0,0.5);
+    }
+}
