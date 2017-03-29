@@ -597,15 +597,8 @@ input[type=submit] {
 /* Colors */
 /* -------------------------------------------------------------------------*/
 /* Animations */
-a, .logo span {
-  -moz-transition-duration: 0.3s;
-  -webkit-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -moz-transition-timing-function: "linear";
-  -webkit-transition-timing-function: "linear";
-  -o-transition-timing-function: "linear";
-  transition-timing-function: "linear";
+a {
+  transition: color 0.3s, background 0.3s;
 }
 
 /* -------------------------------------------------------------------------*/
@@ -615,8 +608,8 @@ a, .logo span {
 * That means, each Media Query adjust 12/12 to appropriate style aka 7/7 or 4/4 etc
 */
 #container {
-  background: pink;
   overflow: hidden;
+  min-width: 320px;
 }
 
 .left-col,
@@ -715,15 +708,15 @@ footer .widget {
 }
 
 .left-col {
-  width: 66.10169%;
+  width: 65.71429%;
   float: left;
-  margin-right: 1.69492%;
+  margin-right: 2.85714%;
 }
 
 .right-col {
-  width: 32.20339%;
+  width: 31.42857%;
   float: left;
-  margin-right: 1.69492%;
+  margin-right: 2.85714%;
   float: right;
   margin-right: 0;
 }
@@ -768,15 +761,14 @@ footer p {
   position: relative;
   max-width: 1440px;
   width: 100%;
-  height: 140px;
   margin: 0 auto;
-  padding: 0 50px;
+  padding: 0 10px;
 }
 
 .top-logo {
   position: relative;
-  top: 28px;
-  float: left;
+  margin-top: 8px;
+  text-align: center;
 }
 
 .top-logo a {
@@ -789,47 +781,19 @@ footer p {
   text-indent: -999em;
 }
 
-.top-search {
-  position: absolute;
-  top: 52px;
-  right: 354px;
-}
-
-.top-search .searchbar {
-  text-align: right;
-  width: 510px;
-}
-
-.top-search input {
-  display: inline-block;
-  max-width: 392px;
-  width: 100%;
-  height: 44px;
-  background: #f2f2f2;
-  border: 0;
-  padding: 0 0 0 8px;
-}
-
-.top-search button {
-  display: inline-block;
-  width: 112px;
-  height: 44px;
-  padding: 0;
-  float: right;
-  border: 0;
-  background: #6B9D48;
-  color: #fff;
-  font-size: 14px;
-  font-weight: bold;
-}
-
 .top-contacts {
-  float: right;
-  width: 240px;
-  text-align: right;
+  position: relative;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.top-contacts p {
+  margin: 0;
+  padding: 0;
 }
 
 .top-contacts ._phone {
+  color: #F2994A;
   font-size: 22px;
   font-weight: bold;
   font-family: 'Fira Sans', sans-serif;
@@ -841,8 +805,101 @@ footer p {
   font-family: 'Fira Sans', sans-serif;
 }
 
+.top-search {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.top-search .searchbar {
+  margin-top: 16px;
+  text-align: right;
+}
+
+.top-search input {
+  display: inline-block;
+  max-width: 392px;
+  width: 77%;
+  height: 44px;
+  background: #f2f2f2;
+  border: 0;
+  padding: 0 0 0 8px;
+}
+
+.top-search button {
+  display: inline-block;
+  width: 23%;
+  height: 44px;
+  padding: 0;
+  float: right;
+  border: 0;
+  background: #6B9D48;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+@media (min-width: 480px) {
+  .top-logo a {
+    width: 210px;
+    height: 76px;
+    float: left;
+  }
+  .top-contacts {
+    text-align: right;
+    float: right;
+  }
+}
+
+@media (min-width: 640px) {
+  .top {
+    height: 140px;
+    padding: 0 50px;
+  }
+  .top-search button {
+    width: 112px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .top-contacts {
+    margin-top: 20px;
+  }
+  .top-search {
+    position: absolute;
+    top: 0;
+    right: 354px;
+    width: auto;
+  }
+  .top-search .searchbar {
+    text-align: right;
+    width: 510px;
+  }
+  .top-search input {
+    display: inline-block;
+    max-width: 392px;
+    width: 100%;
+    height: 44px;
+    background: #f2f2f2;
+    border: 0;
+    padding: 0 0 0 8px;
+  }
+  .top-search button {
+    display: inline-block;
+    width: 112px;
+    height: 44px;
+    padding: 0;
+    float: right;
+    border: 0;
+    background: #6B9D48;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
 nav.main-menu {
-  box-shadow: 0 5px 2px black;
+  box-shadow: 0 4px 8px #eee;
   overflow: hidden;
   /* submenu hiding */
 }
@@ -867,12 +924,45 @@ nav.main-menu a:hover {
   color: #fff;
 }
 
+nav.main-menu .current-menu-item a, nav.main-menu .current_page_ancestor a {
+  border-bottom: 4px solid #6B9D48;
+  padding-bottom: 17px;
+}
+
 nav.main-menu ul > li {
   float: left;
 }
 
-nav.main-menu ul > li > ul {
+nav.main-menu ul > li:hover > ul.sub-menu {
+  display: block;
+}
+
+nav.main-menu ul > li:hover > ul.sub-menu li {
+  display: block;
+  float: none;
+}
+
+nav.main-menu ul > li:hover > ul.sub-menu a {
+  padding: 16px 8px 16px 8px;
+  border-bottom: none;
+}
+
+nav.main-menu ul > li:hover > ul.sub-menu a:hover {
+  padding-left: 6px;
+  border-left: 2px solid #6B9D48;
+}
+
+nav.main-menu ul > li:hover > ul.sub-menu li.current-menu-item a {
+  padding-left: 6px;
+  border-left: 2px solid #6B9D48;
+}
+
+nav.main-menu ul > li > ul.sub-menu {
   display: none;
+  position: absolute;
+  background: #fff;
+  box-shadow: 0 4px 8px #eee;
+  /*display: block;*/
 }
 
 /* -------------------------------------------------------------------------*/

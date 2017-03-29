@@ -19,13 +19,13 @@
     <div id="container" class="group">
         <header class="top group">
 
+            <div class="top-logo">
+                <a href="<?php bloginfo('url') ?>">Anna's Gardens - Organic Garden Maintenance</a>
+            </div>
+
             <div class="top-contacts">
                 <p class="_phone">+44 (0) 7 95 824 7517</p>
                 <p class="_address">32 Rosebank Epsom, London KT1 87RS</p>
-            </div>
-
-            <div class="top-logo">
-                <a href="<?php bloginfo('url') ?>">Anna's Gardens - Organic Garden Maintenance</a>
             </div>
 
             <div class="top-search">

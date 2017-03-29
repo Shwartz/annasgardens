@@ -9,9 +9,8 @@ $contentBg: rgba(255,255,0,0.5);
 
 /* -------------------------------------------------------------------------*/
 /* Animations */
-a, .logo span {	
-	@include transition-duration(0.3s);
-	@include transition-timing("linear");
+a {
+    transition: color 0.3s, background 0.3s;
 }
 
 /* -------------------------------------------------------------------------*/
@@ -21,8 +20,8 @@ a, .logo span {
 * That means, each Media Query adjust 12/12 to appropriate style aka 7/7 or 4/4 etc
 */
 #container {
-    background: pink;
     overflow: hidden;
+    min-width: 320px;
 }
 .left-col,
 .right-col,

@@ -1,5 +1,5 @@
 nav.main-menu {
-    box-shadow: 0 5px 2px black;
+    box-shadow: 0 4px 8px $darkish;
     overflow: hidden;
 
     div {
@@ -22,12 +22,47 @@ nav.main-menu {
         }
     }
 
+    .current-menu-item, .current_page_ancestor {
+        a {
+            border-bottom: 4px solid $green;
+            padding-bottom: 17px;
+        }
+    }
+
     ul > li {
         float: left;
+
+        &:hover {
+            > ul.sub-menu {
+                display: block;
+                li {
+                    display: block;
+                    float: none;
+                }
+                a {
+                    padding: 16px 8px 16px 8px;
+                    border-bottom: none;
+
+                    &:hover {
+                        padding-left: 6px;
+                        border-left: 2px solid $green;
+                    }
+                }
+
+                li.current-menu-item a {
+                    padding-left: 6px;
+                    border-left: 2px solid $green;
+                }
+            }
+        }
     }
 
     /* submenu hiding */
-    ul > li > ul {
+    ul > li > ul.sub-menu {
         display: none;
+        position: absolute;
+        background: $white;
+        box-shadow: 0 4px 8px $darkish;
+        /*display: block;*/
     }
 }
