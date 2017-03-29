@@ -1,4 +1,5 @@
 nav.main-menu {
+    display: none;
     box-shadow: 0 4px 8px $darkish;
     overflow: hidden;
 
@@ -65,4 +66,9 @@ nav.main-menu {
         box-shadow: 0 4px 8px $darkish;
         /*display: block;*/
     }
+
+    @include susy-media($tabletLandscape) {
+        display: block;
+    }
 }
+

@@ -899,6 +899,7 @@ footer p {
 }
 
 nav.main-menu {
+  display: none;
   box-shadow: 0 4px 8px #eee;
   overflow: hidden;
   /* submenu hiding */
@@ -963,6 +964,12 @@ nav.main-menu ul > li > ul.sub-menu {
   background: #fff;
   box-shadow: 0 4px 8px #eee;
   /*display: block;*/
+}
+
+@media (min-width: 768px) {
+  nav.main-menu {
+    display: block;
+  }
 }
 
 /* -------------------------------------------------------------------------*/
