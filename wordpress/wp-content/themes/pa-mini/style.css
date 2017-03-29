@@ -809,6 +809,7 @@ header, footer {
 
 nav.main-menu {
   display: none;
+  margin-top: 16px;
   box-shadow: 0 4px 8px #eee;
   overflow: hidden;
   /* submenu hiding */
@@ -887,13 +888,19 @@ nav.main-menu ul > li > ul.sub-menu {
   }
 }
 
+@media (min-width: 1200px) {
+  nav.main-menu {
+    margin-top: 0;
+  }
+}
+
 .mob-menu {
   text-align: right;
 }
 
 .mob-menu nav {
   top: 48px;
-  position: absolute;
+  position: fixed;
   background: #fff;
   width: 300px;
   z-index: 10;
@@ -904,6 +911,8 @@ nav.main-menu ul > li > ul.sub-menu {
   transform: translate3d(300px, 0, 0);
   transition: transform 0.3s;
   -webkit-overflow-scrolling: touch;
+  /*visibility: hidden;*/
+  /*display: none;*/
 }
 
 .mob-menu ul li {
@@ -939,6 +948,7 @@ nav.main-menu ul > li > ul.sub-menu {
 .mob-menu ul a {
   display: block;
   padding: 16px 8px;
+  margin-left: 1px;
   border-bottom: 1px solid #f2f2f2;
   border-left: 4px solid #fff;
   text-decoration: none;
@@ -964,11 +974,19 @@ nav.main-menu ul > li > ul.sub-menu {
   display: none;
 }
 
+@media (min-width: 768px) {
+  .mob-menu {
+    display: none;
+  }
+}
+
 body._show-mob-menu {
   overflow: hidden;
 }
 
 body._show-mob-menu .mob-menu nav {
+  /*display: block;*/
+  visibility: visible;
   transform: translate3d(0, 0, 0);
 }
 
@@ -1060,7 +1078,7 @@ body._show-mob-menu .mob-menu nav {
 }
 
 .widget h3 {
-  margin-top: 16px;
+  margin-top: 0;
 }
 
 .widget a {

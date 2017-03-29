@@ -3,7 +3,7 @@
 
     nav {
         top: $mobMenuHeight;
-        position: absolute;
+        position: fixed;
         background: $white;
         width: 300px;
         z-index: 10;
@@ -14,6 +14,9 @@
         transform: translate3d(300px, 0, 0);
         transition: transform 0.3s;
         -webkit-overflow-scrolling: touch;
+
+        /*visibility: hidden;*/
+        /*display: none;*/
     }
 
     ul li {
@@ -51,6 +54,7 @@
     ul a {
         display: block;
         padding: 16px 8px;
+        margin-left: 1px;
         border-bottom: 1px solid $lightGrey;
         border-left: 4px solid $white;
         text-decoration: none;
@@ -78,12 +82,16 @@
         }
     }
 
-
+    @include susy-media($tabletLandscape) {
+        display: none;
+    }
 }
 
 body._show-mob-menu {
     overflow: hidden;
     .mob-menu nav {
+        /*display: block;*/
+        visibility: visible;
         transform: translate3d(0, 0, 0);
     }
 }

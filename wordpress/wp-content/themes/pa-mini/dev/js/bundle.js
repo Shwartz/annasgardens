@@ -187,7 +187,6 @@
 	
 	        // root -> current menu element
 	        this.root = root;
-	        this.elPage = document.getElementById('page');
 	        // creating wrapper element for mob menu
 	        this.elMobWrap = _utils2.default.make('div');
 	        (0, _helpers.addClass)(this.elMobWrap, 'mob-menu');
@@ -282,8 +281,13 @@
 	    }, {
 	        key: 'closeMobileMenu',
 	        value: function closeMobileMenu() {
-	            console.log('close menu');
+	            var _this3 = this;
+	
+	            if (!(0, _helpers.hasClass)(document.body, '_show-mob-menu')) return;
 	            (0, _helpers.removeClass)(document.body, '_show-mob-menu');
+	            setTimeout(function () {
+	                _this3.elMobMenu.style.visible = 'hidden';
+	            }, 300);
 	        }
 	    }]);
 	

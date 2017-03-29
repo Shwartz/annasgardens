@@ -6,7 +6,6 @@ export default class Menu {
     constructor(root) {
         // root -> current menu element
         this.root = root;
-        this.elPage = document.getElementById('page');
         // creating wrapper element for mob menu
         this.elMobWrap = $$.make('div');
         addClass(this.elMobWrap, 'mob-menu');
@@ -88,7 +87,10 @@ export default class Menu {
     }
 
     closeMobileMenu() {
-        console.log('close menu')
-        removeClass(document.body, '_show-mob-menu')
+        if (!hasClass(document.body, '_show-mob-menu')) return;
+        removeClass(document.body, '_show-mob-menu');
+        setTimeout(() => {
+            this.elMobMenu.style.visible = 'hidden';
+        }, 300);
     }
 }
