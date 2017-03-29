@@ -31,6 +31,8 @@ export default class Menu {
         this.adjustMenu();
         this.addEvents();
         this.addMobMenuToDom();
+
+        $$.binder(face.evResize, this.closeMobileMenu.bind(this));
     }
 
     addEvents() {
@@ -67,17 +69,6 @@ export default class Menu {
 
     closeSubcats(el) {
         Array.prototype.forEach.call(el.querySelectorAll('ul'),  elUl => addClass(elUl, face.str_hide));
-    }
-
-    closeAllCats() {
-        Array.prototype.forEach.call(this.elHasSub, (el) => {
-            // closing .has_sub
-            addClass(el, face.str_hide);
-            Array.prototype.forEach.call(el.querySelectorAll('ul'), (elUl) => {
-                // closing every sub-cat as well
-                addClass(elUl, face.str_hide);
-            });
-        });
     }
 
     addMobMenuToDom () {

@@ -212,6 +212,8 @@
 	        this.adjustMenu();
 	        this.addEvents();
 	        this.addMobMenuToDom();
+	
+	        _utils2.default.binder(_face.face.evResize, this.closeMobileMenu.bind(this));
 	    }
 	
 	    _createClass(Menu, [{
@@ -258,18 +260,6 @@
 	        value: function closeSubcats(el) {
 	            Array.prototype.forEach.call(el.querySelectorAll('ul'), function (elUl) {
 	                return (0, _helpers.addClass)(elUl, _face.face.str_hide);
-	            });
-	        }
-	    }, {
-	        key: 'closeAllCats',
-	        value: function closeAllCats() {
-	            Array.prototype.forEach.call(this.elHasSub, function (el) {
-	                // closing .has_sub
-	                (0, _helpers.addClass)(el, _face.face.str_hide);
-	                Array.prototype.forEach.call(el.querySelectorAll('ul'), function (elUl) {
-	                    // closing every sub-cat as well
-	                    (0, _helpers.addClass)(elUl, _face.face.str_hide);
-	                });
 	            });
 	        }
 	    }, {

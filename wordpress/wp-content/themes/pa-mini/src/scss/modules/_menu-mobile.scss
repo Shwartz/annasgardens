@@ -2,7 +2,7 @@
     text-align: right;
 
     nav {
-        top: 32px;
+        top: $mobMenuHeight;
         position: absolute;
         background: wheat;
         width: 300px;
@@ -63,10 +63,14 @@ body._show-mob-menu {
 .mobile-menu-hamburger {
     position: absolute;
     top: 0;
-    height: 32px;
+    height: $mobMenuHeight;
     left: 0;
     right: 0;
     z-index: 1;
     text-align: right;
     background: yellow;
+
+    @include susy-media($tabletLandscape) {
+        display: none;
+    }
 }

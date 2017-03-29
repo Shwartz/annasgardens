@@ -47,7 +47,13 @@ a {
 
 #page {
     padding-bottom: 50px;
+    margin-top: $mobMenuHeight;
+
+    @include susy-media($tabletLandscape) {
+        margin-top: 0;
+    }
 }
+
 article {
 
 }

@@ -644,6 +644,13 @@ a {
 
 #page {
   padding-bottom: 50px;
+  margin-top: 48px;
+}
+
+@media (min-width: 768px) {
+  #page {
+    margin-top: 0;
+  }
 }
 
 .navi {
@@ -986,7 +993,7 @@ nav.main-menu ul > li > ul.sub-menu {
 }
 
 .mob-menu nav {
-  top: 32px;
+  top: 48px;
   position: absolute;
   background: wheat;
   width: 300px;
@@ -1040,12 +1047,18 @@ body._show-mob-menu {
 .mobile-menu-hamburger {
   position: absolute;
   top: 0;
-  height: 32px;
+  height: 48px;
   left: 0;
   right: 0;
   z-index: 1;
   text-align: right;
   background: yellow;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu-hamburger {
+    display: none;
+  }
 }
 
 /* -------------------------------------------------------------------------*/
