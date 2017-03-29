@@ -989,6 +989,30 @@ nav.main-menu ul > li > ul.sub-menu {
   text-align: left;
 }
 
+.mob-menu ul li {
+  position: relative;
+}
+
+.mob-menu ul li > div._btn-cat {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  top: 0;
+  right: 0;
+  background: #4b53ff;
+  color: green;
+  cursor: pointer;
+}
+
+.mob-menu ul li > div._btn-cat:after {
+  line-height: 18px;
+  content: "+";
+  font-size: 32px;
+  position: absolute;
+  top: calc(50% - 8px);
+  left: calc(50% - 8px);
+}
+
 .mob-menu ul a {
   display: block;
   padding: 16px 8px;

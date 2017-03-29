@@ -14,6 +14,30 @@
         text-align: left;
     }
 
+    ul li {
+        position: relative;
+
+        > div._btn-cat {
+            position: absolute;
+            width: 54px;
+            height: 54px;
+            top: 0;
+            right: 0;
+            background: #4b53ff;
+            color: green;
+            cursor: pointer;
+
+            &:after {
+                line-height: 18px;
+                content: "+";
+                font-size: 32px;
+                position: absolute;
+                top: calc(50% - 8px);
+                left: calc(50% - 8px);;
+            }
+        }
+    }
+
     ul a {
         display: block;
         padding: 16px 8px;

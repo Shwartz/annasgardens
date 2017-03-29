@@ -207,11 +207,60 @@
 	        // clone existing menu
 	        this.elMobMenu = root.cloneNode(true);
 	        (0, _helpers.removeClass)(this.elMobMenu, 'main-menu');
+	        this.elHasSub = (0, _helpers.qsa)('.menu-item-has-children', this.elMobMenu);
 	
+	        this.adjustMenu();
 	        this.addMobMenuToDom();
 	    }
 	
 	    _createClass(Menu, [{
+	        key: 'adjustMenu',
+	        value: function adjustMenu() {
+	            var _this = this;
+	
+	            // creating cats toggle button
+	            console.log('this.elHasSub: ', this.elHasSub);
+	            Array.prototype.forEach.call(this.elHasSub, function (el) {
+	                console.log('el', el);
+	                var div = _utils2.default.make('div');
+	                (0, _helpers.addClass)(div, '_btn-cat');
+	                (0, _helpers.addClass)(el, _face.face.str_hide);
+	                div.addEventListener(_face.face.evClick, function (e) {
+	                    _this.toggleCategory(el, true);
+	                    e.preventDefault();
+	                });
+	                el.appendChild(div);
+	            });
+	        }
+	    }, {
+	        key: 'toggleCategory',
+	        value: function toggleCategory(el) {
+	            var isCat = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+	
+	            (0, _helpers.toggleClass)(el, _face.face.str_hide);
+	            // if cat and if has class _hide we close sub-cats
+	            if (isCat && (0, _helpers.hasClass)(el, _face.face.str_hide)) this.closeSubcats(el);
+	        }
+	    }, {
+	        key: 'closeSubcats',
+	        value: function closeSubcats(el) {
+	            Array.prototype.forEach.call(el.querySelectorAll('ul'), function (elUl) {
+	                return (0, _helpers.addClass)(elUl, _face.face.str_hide);
+	            });
+	        }
+	    }, {
+	        key: 'closeAllCats',
+	        value: function closeAllCats() {
+	            Array.prototype.forEach.call(this.elHasSub, function (el) {
+	                // closing .has_sub
+	                (0, _helpers.addClass)(el, _face.face.str_hide);
+	                Array.prototype.forEach.call(el.querySelectorAll('ul'), function (elUl) {
+	                    // closing every sub-cat as well
+	                    (0, _helpers.addClass)(elUl, _face.face.str_hide);
+	                });
+	            });
+	        }
+	    }, {
 	        key: 'addMobMenuToDom',
 	        value: function addMobMenuToDom() {
 	            this.elPage.insertBefore(this.elMobWrap, this.elPage.firstChild);
