@@ -19,8 +19,8 @@ export default class Menu {
         // create close button
         this.elBtnWrapper = $$.make('div');
         this.elBtn = $$.make('button');
-        this.elBtn.innerHTML = 'Close';
-        addClass(this.elBtnWrapper, '_close');
+        this.elBtn.innerHTML = 'Toggle Menu';
+        addClass(this.elBtnWrapper, 'mobile-menu-hamburger');
         this.elBtnWrapper.appendChild(this.elBtn);
 
         // clone existing menu
@@ -29,14 +29,25 @@ export default class Menu {
         this.elHasSub = qsa('.menu-item-has-children', this.elMobMenu);
 
         this.adjustMenu();
+        this.addEvents();
         this.addMobMenuToDom();
+    }
+
+    addEvents() {
+        // close button
+        console.log('add events')
+        this.elBtn.addEventListener(face.evClick, (e) => {
+            e.preventDefault();
+            (hasClass(document.body, '_show-mob-menu') ? this.closeMobileMenu() : this.showMobileMenu());
+        });
+        this.elOverlay.addEventListener(face.evClick, (e) => {
+            this.closeMobileMenu();
+        })
     }
 
     adjustMenu() {
         // creating cats toggle button
-        console.log('this.elHasSub: ', this.elHasSub);
         Array.prototype.forEach.call(this.elHasSub,  (el) => {
-            console.log('el', el);
             let div = $$.make('div');
             addClass(div, '_btn-cat');
             addClass(el, face.str_hide);
@@ -48,10 +59,10 @@ export default class Menu {
         });
     }
 
-    toggleCategory(el, isCat = false) {
+    toggleCategory(el) {
         toggleClass(el, face.str_hide);
         // if cat and if has class _hide we close sub-cats
-        if(isCat && hasClass(el, face.str_hide)) this.closeSubcats(el);
+        if (hasClass(el, face.str_hide)) this.closeSubcats(el);
     }
 
     closeSubcats(el) {
@@ -70,20 +81,23 @@ export default class Menu {
     }
 
     addMobMenuToDom () {
-        this.elPage.insertBefore(this.elMobWrap, this.elPage.firstChild);
-        this.elMobWrap.appendChild(this.elBtn);
         this.elMobWrap.appendChild(this.elMobMenu);
+        document.body.appendChild(this.elBtnWrapper);
+        document.body.appendChild(this.elOverlay);
+        document.body.appendChild(this.elMobWrap);
     }
 
     toggleBtn() {
 
     }
 
-    showMenu() {
-
+    showMobileMenu() {
+        console.log('show menu')
+        addClass(document.body, '_show-mob-menu')
     }
 
-    hideMenu() {
-
+    closeMobileMenu() {
+        console.log('close menu')
+        removeClass(document.body, '_show-mob-menu')
     }
 }

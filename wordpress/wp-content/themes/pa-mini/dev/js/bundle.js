@@ -200,8 +200,8 @@
 	        // create close button
 	        this.elBtnWrapper = _utils2.default.make('div');
 	        this.elBtn = _utils2.default.make('button');
-	        this.elBtn.innerHTML = 'Close';
-	        (0, _helpers.addClass)(this.elBtnWrapper, '_close');
+	        this.elBtn.innerHTML = 'Toggle Menu';
+	        (0, _helpers.addClass)(this.elBtnWrapper, 'mobile-menu-hamburger');
 	        this.elBtnWrapper.appendChild(this.elBtn);
 	
 	        // clone existing menu
@@ -210,23 +210,37 @@
 	        this.elHasSub = (0, _helpers.qsa)('.menu-item-has-children', this.elMobMenu);
 	
 	        this.adjustMenu();
+	        this.addEvents();
 	        this.addMobMenuToDom();
 	    }
 	
 	    _createClass(Menu, [{
-	        key: 'adjustMenu',
-	        value: function adjustMenu() {
+	        key: 'addEvents',
+	        value: function addEvents() {
 	            var _this = this;
 	
+	            // close button
+	            console.log('add events');
+	            this.elBtn.addEventListener(_face.face.evClick, function (e) {
+	                e.preventDefault();
+	                (0, _helpers.hasClass)(document.body, '_show-mob-menu') ? _this.closeMobileMenu() : _this.showMobileMenu();
+	            });
+	            this.elOverlay.addEventListener(_face.face.evClick, function (e) {
+	                _this.closeMobileMenu();
+	            });
+	        }
+	    }, {
+	        key: 'adjustMenu',
+	        value: function adjustMenu() {
+	            var _this2 = this;
+	
 	            // creating cats toggle button
-	            console.log('this.elHasSub: ', this.elHasSub);
 	            Array.prototype.forEach.call(this.elHasSub, function (el) {
-	                console.log('el', el);
 	                var div = _utils2.default.make('div');
 	                (0, _helpers.addClass)(div, '_btn-cat');
 	                (0, _helpers.addClass)(el, _face.face.str_hide);
 	                div.addEventListener(_face.face.evClick, function (e) {
-	                    _this.toggleCategory(el, true);
+	                    _this2.toggleCategory(el, true);
 	                    e.preventDefault();
 	                });
 	                el.appendChild(div);
@@ -235,11 +249,9 @@
 	    }, {
 	        key: 'toggleCategory',
 	        value: function toggleCategory(el) {
-	            var isCat = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-	
 	            (0, _helpers.toggleClass)(el, _face.face.str_hide);
 	            // if cat and if has class _hide we close sub-cats
-	            if (isCat && (0, _helpers.hasClass)(el, _face.face.str_hide)) this.closeSubcats(el);
+	            if ((0, _helpers.hasClass)(el, _face.face.str_hide)) this.closeSubcats(el);
 	        }
 	    }, {
 	        key: 'closeSubcats',
@@ -263,19 +275,26 @@
 	    }, {
 	        key: 'addMobMenuToDom',
 	        value: function addMobMenuToDom() {
-	            this.elPage.insertBefore(this.elMobWrap, this.elPage.firstChild);
-	            this.elMobWrap.appendChild(this.elBtn);
 	            this.elMobWrap.appendChild(this.elMobMenu);
+	            document.body.appendChild(this.elBtnWrapper);
+	            document.body.appendChild(this.elOverlay);
+	            document.body.appendChild(this.elMobWrap);
 	        }
 	    }, {
 	        key: 'toggleBtn',
 	        value: function toggleBtn() {}
 	    }, {
-	        key: 'showMenu',
-	        value: function showMenu() {}
+	        key: 'showMobileMenu',
+	        value: function showMobileMenu() {
+	            console.log('show menu');
+	            (0, _helpers.addClass)(document.body, '_show-mob-menu');
+	        }
 	    }, {
-	        key: 'hideMenu',
-	        value: function hideMenu() {}
+	        key: 'closeMobileMenu',
+	        value: function closeMobileMenu() {
+	            console.log('close menu');
+	            (0, _helpers.removeClass)(document.body, '_show-mob-menu');
+	        }
 	    }]);
 	
 	    return Menu;
