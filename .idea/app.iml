@@ -3,6 +3,8 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/design" />
+      <excludeFolder url="file://$MODULE_DIR$/wordpress/wp-content/themes/pa-mini-2/dev" />
+      <excludeFolder url="file://$MODULE_DIR$/wordpress/wp-content/themes/pa-mini-2/dist" />
       <excludeFolder url="file://$MODULE_DIR$/wordpress/wp-content/themes/pa-mini/dev" />
       <excludeFolder url="file://$MODULE_DIR$/wordpress/wp-content/themes/pa-mini/dist" />
     </content>
