@@ -675,9 +675,9 @@ header, footer {
 
 .top-logo a {
   width: 242px;
-  height: 88px;
+  height: 113px;
   display: inline-block;
-  background: url("images/logo-annasgardens.png") no-repeat 50%;
+  background: url("images/annas-gardens-logo.png") no-repeat 50%;
   background-size: contain;
   overflow: hidden;
   text-indent: -999em;
@@ -744,7 +744,7 @@ header, footer {
 @media (min-width: 480px) {
   .top-logo a {
     width: 210px;
-    height: 76px;
+    height: 98px;
     float: left;
   }
   .top-contacts {
@@ -769,7 +769,7 @@ header, footer {
   }
   .top-logo a {
     width: 242px;
-    height: 88px;
+    height: 113px;
   }
   .top-contacts {
     margin-top: 20px;
@@ -890,7 +890,8 @@ nav.main-menu ul > li > ul.sub-menu {
 
 @media (min-width: 1200px) {
   nav.main-menu {
-    margin-top: 0;
+    width: 100%;
+    margin-top: 48px;
   }
 }
 
