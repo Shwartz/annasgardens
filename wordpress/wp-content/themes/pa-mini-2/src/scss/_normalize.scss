@@ -194,9 +194,10 @@ sub {
  */
 
 img {
+    width: 100%;
     border: 0;
     max-width: 100%;
-    width: auto;
+    height: auto;
 }
 
 /**

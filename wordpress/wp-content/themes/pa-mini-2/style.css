@@ -189,9 +189,10 @@ sub {
  * Remove border when inside `a` element in IE 8/9/10.
  */
 img {
+  width: 100%;
   border: 0;
   max-width: 100%;
-  width: auto;
+  height: auto;
 }
 
 /**
@@ -674,6 +675,7 @@ header, footer {
   background-size: contain;
   overflow: hidden;
   text-indent: -999em;
+  transition: width 0.5s;
 }
 
 .top-contacts {
@@ -844,6 +846,7 @@ nav.main-menu ul > li:first-child > a {
 
 nav.main-menu ul > li:hover > ul.sub-menu {
   display: block;
+  z-index: 10;
 }
 
 nav.main-menu ul > li:hover > ul.sub-menu li {
@@ -1018,7 +1021,7 @@ body._show-mob-menu .mob-menu nav {
 
 #content {
   margin: 0 auto;
-  padding: 0 50px;
+  padding: 0 10px;
   max-width: 1440px;
   overflow: hidden;
 }
@@ -1034,6 +1037,12 @@ body._show-mob-menu .mob-menu nav {
   list-style-type: none;
   margin-bottom: 0;
   margin-left: 0;
+}
+
+@media (min-width: 640px) {
+  #content {
+    padding: 0 50px;
+  }
 }
 
 .left-col {
@@ -1109,17 +1118,30 @@ body._show-mob-menu .mob-menu nav {
 }
 
 footer {
-  background: #f2f2f2;
+  background: #4F4F4F;
 }
 
 footer ._footer-inner {
   margin: 0 auto;
-  padding: 50px;
+  padding: 50px 10px;
   max-width: 1440px;
 }
 
-footer p {
-  color: #4F4F4F;
+@media (min-width: 640px) {
+  footer ._footer-inner {
+    padding: 50px;
+  }
+}
+
+footer .widget {
+  margin-top: 0;
+  background: transparent;
+  color: #fff;
+  text-align: center;
+}
+
+footer .widget p {
+  color: #fff;
 }
 
 ._show-mob-menu ._overlay {

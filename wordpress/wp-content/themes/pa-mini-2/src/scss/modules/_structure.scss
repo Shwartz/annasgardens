@@ -1,6 +1,6 @@
 #content {
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 10px;
     max-width: 1440px;
     overflow: hidden;
 
@@ -15,6 +15,10 @@
         list-style-type: none;
         margin-bottom: 0;
         margin-left: 0;
+    }
+
+    @include susy-media($tablet) {
+        padding: 0 50px;
     }
 }
 
@@ -71,16 +75,28 @@
 }
 
 footer {
-    background: $lightGrey;
+    background: $text;
 
     ._footer-inner {
         margin: 0 auto;
-        padding: 50px;
+        padding: 50px 10px;
         max-width: 1440px;
     }
 
-    p {
-        color: $text;
+    @include susy-media($tablet) {
+        ._footer-inner {
+            padding: 50px;
+        }
+    }
+
+    .widget {
+        margin-top: 0;
+        background: transparent;
+        color: $white;
+        text-align: center;
+        p {
+            color: $white;
+        }
     }
 }
 
@@ -91,6 +107,6 @@ footer {
         right: 0;
         bottom: 0;
         left: 0;
-        background: rgba(0,0,0,0.5);
+        background: rgba(0, 0, 0, 0.5);
     }
 }

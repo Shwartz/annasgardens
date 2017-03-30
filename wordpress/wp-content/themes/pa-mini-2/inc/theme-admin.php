@@ -8,7 +8,7 @@
             'manage_options',
             'theme-admin',
             'pa_theme_admin',
-            content_url( 'themes/pa-mini/images/pa-logo-16x16.png' ),
+            content_url( 'themes/pa-mini-2/images/pa-logo-16x16.png' ),
             62
         );
     }
