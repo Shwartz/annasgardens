@@ -36,7 +36,6 @@ export default class Menu {
 
     addEvents() {
         // close button
-        console.log('add events')
         this.elBtn.addEventListener(face.evClick, (e) => {
             e.preventDefault();
             (hasClass(document.body, '_show-mob-menu') ? this.closeMobileMenu() : this.showMobileMenu());
@@ -82,7 +81,6 @@ export default class Menu {
     }
 
     showMobileMenu() {
-        console.log('show menu')
         addClass(document.body, '_show-mob-menu')
     }
 

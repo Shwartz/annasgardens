@@ -4,8 +4,6 @@ import Menu from './Menu';
 
 
 export function init() {
-    console.log('ta-daa starting main.js');
-
     /**
      * Main Menu
      */

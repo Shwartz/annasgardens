@@ -83,8 +83,6 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function init() {
-	    console.log('ta-daa starting main.js');
-	
 	    /**
 	     * Main Menu
 	     */
@@ -221,7 +219,6 @@
 	            var _this = this;
 	
 	            // close button
-	            console.log('add events');
 	            this.elBtn.addEventListener(_face.face.evClick, function (e) {
 	                e.preventDefault();
 	                (0, _helpers.hasClass)(document.body, '_show-mob-menu') ? _this.closeMobileMenu() : _this.showMobileMenu();
@@ -275,7 +272,6 @@
 	    }, {
 	        key: 'showMobileMenu',
 	        value: function showMobileMenu() {
-	            console.log('show menu');
 	            (0, _helpers.addClass)(document.body, '_show-mob-menu');
 	        }
 	    }, {

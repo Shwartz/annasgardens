@@ -71,7 +71,8 @@ add_filter( 'excerpt_more', 'new_excerpt_more' );
 /* ----------------------------------------------------- */
 function pa_mini_scripts()
 {
-    wp_register_script('bundle', get_template_directory_uri() . '/dev/js/bundle.js', uniqid());
+    /*wp_register_script('bundle', get_template_directory_uri() . '/dev/js/bundle.js', uniqid());*/
+    wp_register_script('bundle', get_template_directory_uri() . '/dist/js/bundle.min.js', 'v-20170330');
     wp_enqueue_script(array('bundle'), false);
 }
 
